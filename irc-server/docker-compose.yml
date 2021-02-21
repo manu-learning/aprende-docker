@@ -1,0 +1,14 @@
+version: "2.1"
+services:
+  irc:
+    #image: inspircd/inspircd-docker
+    container_name: irc
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - "6667:6667"
+    environment:
+      INSPIRCD_SERVER_NAME: "irc.localhost"
+      INSPIRCD_SERVER_DESCRIPTION: "Probando..."
+

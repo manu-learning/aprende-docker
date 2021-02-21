@@ -1,0 +1,25 @@
+# corremos en la ruta donde esté este archivo, la sig. linea de comando:
+# docker-compose up -d 
+# 
+#version: "2.1"
+services:
+  # nginx:
+  #   image: nginx:alpine
+  #   ports:
+  #     - 80:80
+  # nginx-proxy:
+  #   image: nginx-proxy
+  #   restart: always
+  #   ports:
+  #     - "80:80"
+  nginx:
+    container_name: unservidor
+    restart: always
+    #image: nginx:alpine
+    image: nginx
+    # expose:
+    #   - "80"
+    ports:
+     - "80:80"
+    volumes:
+      - /home/jelou/Documentos/git/aprende-docker/nginx/www:/usr/share/nginx/html:ro
