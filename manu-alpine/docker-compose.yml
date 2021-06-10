@@ -1,0 +1,12 @@
+version: "3"
+services:
+  app:
+    container_name: app
+    tty: true               # docker run -i
+    stdin_open: true        # docker run  -t
+    #image: alpine:edge # << ahora usamos la imagen en Dockerfile
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - ./data:/home/data

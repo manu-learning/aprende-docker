@@ -1,6 +1,0 @@
-# obtenemos la imagen
-FROM linuxserver/duckdns
-MAINTEINER jelou
-
-# RUN 
-

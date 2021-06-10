@@ -1,0 +1,19 @@
+#+BEGIN_SRC sh
+  # compilamos la imagen
+  docker build -t miservidor:1 .
+  # corremos el contenedor
+  docker run -it -p 9090:22 -d --name miservidor miservidor:1
+  # analizamos los datos del contenedor
+  docker inspect miservidor | more
+  # entramos desde el host
+  ssh root@172.17.0.2 -p 49154
+#+END_SRC
+
+Referencias
+1. https://wiki.alpinelinux.org/wiki/Setting_up_a_ssh-server
+2. https://www.edureka.co/community/71282/how-to-enable-ssh-inside-docker-container
+3. https://medium.com/exampro/how-to-setup-and-ssh-into-alpine-linux-virtual-box-51be296ff710
+4. https://github.com/linuxserver/docker-openssh-server
+5. 
+6. https://stackoverflow.com/questions/35690954/running-openssh-in-an-alpine-docker-container
+7. 

@@ -1,0 +1,27 @@
+version: "2.1"
+services:
+  # entramos con docker exec -it miServidorAlpine sh
+  ngnix:
+    image: nginx:alpine
+    container_name: miServidorAlpine
+    # restart: always
+    ports:
+      - "81:80"
+    volumes:
+      # este volumen, se crea dentro de /var/lib/docker/volumes
+      # y apunta a la ruta del contenedor 
+       - data:/usr/share/nginx/html:ro
+      # el directorio "application" tiene que estar en la misma ruta
+      # que este archivo Docker-compose.yml
+      #- ./application:/usr/share/nginx/html:ro
+  # redis:
+  #   image: redis:alpine
+  #   networks:
+  #     - appnet
+
+# networks:
+#   appnet:
+#     driver: "bridge"
+volumes:
+  data:
+    driver: "local"

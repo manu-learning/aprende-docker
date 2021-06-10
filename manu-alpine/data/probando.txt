@@ -1,0 +1,2 @@
+Este texto se comparten entre host y container?
+tururu..
