@@ -1,0 +1,44 @@
+* Comandos
+  |--------------+-------------------------------------------------------|
+  | Comando      | Descripción                                           |
+  |--------------+--------------------------------------------------------|
+  | ~make~       | Crear contenedor/conexiones + Acceder a Weechat-matrix |
+  | ~make shell~ | Acceder al contenedor con weechat                      |
+  | ~make stop~  | Detener contenedor                                     |
+  | ~make rm~    | Remover contenedor/conexiones                          |
+* Weechat
+** Configuración
+  #+BEGIN_QUOTE
+  dentro de Weechat sólo necesitamos configurar usuario/clave y conectarnos
+
+  1. cargamos el plugin para acceder al servidor matrix.org
+  ~/script load matrix.py~
+  
+  2. cargamos los datos de nuestra cuenta en el servidor matrix.org
+  ~/set matrix.server.matrix_org.username johndoe~
+  ~/set matrix.server.matrix_org.password jd_is_awesome~
+  
+  3. nos conectamos al servidor
+  ~/matrix connect matrix_org~
+ 
+  4. definimos que se conecte por defecto a matrix.org
+  ~/set matrix.server.matrix_org.autoconnect on~
+  
+  5. guardamos la configuración de weechat
+  ~/save~
+  #+END_QUOTE
+* Issues
+  #+BEGIN_COMMENT
+  <Unable to decrypt: The sender's device has not sent us the keys for this message>
+
+  matrix: Untrusted devices found in room: Device KREEHCUUPM for user @neverkas:matrix.org is not verified or blacklisted.
+  matrix: Ignoring unverified devices
+  #+END_COMMENT
+* Referencias
+** Referencias Oficiales
+   1. [[https://matrix.org/docs/projects/client/weechat-matrix][weechat-matrix Client (matrix.org)]]
+   2. [[https://github.com/poljar/weechat-matrix][weechat-matrix (github.com)]]
+   3. [[https://matrix.org/docs/projects/server/synapse][Synapse Server (matrix.org)]]
+   4. [[https://weechat.org/files/doc/stable/weechat_quickstart.es.html][WeeChat guía rápida (weechat.org)]]
+** Referencias Extraoficiales
+   1. [[https://element.io/blog/e2e-encryption-by-default-cross-signing-is-here/][E2E Encryption by Default & Cross-signing (element.io)]]

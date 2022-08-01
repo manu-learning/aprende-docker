@@ -1,0 +1,9 @@
+version: "2.1"
+services:
+  weechat:
+    container_name: weechat
+    stdin_open: true
+#     tty: true
+    build:
+      dockerfile: Dockerfile
+      context: .
